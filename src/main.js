@@ -8,7 +8,8 @@ import "./assets/vendor/remixicon/remixicon.css"
 import "./assets/vendor/swiper/swiper-bundle.min.css"
 import "./assets/css/style.css"
 import "./assets/css/fleet.css"
+import router from "./routes.js"
 import App from './App.vue'
 
 
-createApp(App).mount('#app')
+createApp(App).use(router).mount('#app')

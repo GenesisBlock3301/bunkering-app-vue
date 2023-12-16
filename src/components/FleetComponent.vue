@@ -52,8 +52,8 @@ function onMouseLeave(index){
 </script>
 
 <template>
-  <div id="services" class="services section-bg">
-    <div class="section-title">
+  <div id="fleet" style="margin-top: 110px">
+    <div class="section-title" data-aos="fade-down">
       <h2>Fleet</h2>
     </div>
     <div class="row">
@@ -77,7 +77,9 @@ function onMouseLeave(index){
               </div>
             </div>
             <div class="flex justify-center">
-              <div class="grid translate-y-32 grid-cols-3 justify-center gap-10 gap-y-4 transition-all duration-700 ease-in-out sm:flex sm:gap-10 md:translate-y-24 md:gap-20 md:opacity-0 md:group-hover:translate-y-36 md:group-hover:opacity-100">
+              <div class="grid translate-y-32 grid-cols-3 justify-center gap-10 gap-y-4 transition-all duration-700
+              ease-in-out sm:flex sm:gap-10 md:translate-y-24 md:gap-20 md:opacity-0 md:group-hover:translate-y-36
+              md:group-hover:opacity-100">
                 <div v-for="item in image.features" :key="item.id" class="flex flex-col gap-y-2">
                   <h1 class="text-center text-xs text-[#707070]">{{ item.name }}</h1>
                   <p class="text-center text-xs">{{ item.amount }}</p>

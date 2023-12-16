@@ -1,55 +1,37 @@
 <script setup>
-import {computed} from "vue";
+import {ref} from "vue";
+let mobileMenu = ref(false);
 
-let mobileView = false
-let menu = false
-let cross = true
-function mobileViewToggle(){
-  mobileView = !mobileView
-  return mobileView
+function mobileViewToggle() {
+  mobileMenu.value = !mobileMenu.value;
+  return mobileMenu.value;
 }
-
 </script>
 
 <template>
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top" style="background-color: #0c3c53">
+  <header id="header" class="fixed-top" style="background-color: #375173">
     <div class="container d-flex align-items-center">
-
       <h1 class="logo me-auto"><a href="index.html">Bunkering</a></h1>
-<!--      navbar-mobile-->
-      <nav id="navbar" class="navbar">
+      <nav id="navbar" class="navbar" :class="{'navbar-mobile': mobileMenu}">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-<!--          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>-->
-<!--            <ul>-->
-<!--              <li><a href="#">Drop Down 1</a></li>-->
-<!--              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>-->
-<!--                <ul>-->
-<!--                  <li><a href="#">Deep Drop Down 1</a></li>-->
-<!--                  <li><a href="#">Deep Drop Down 2</a></li>-->
-<!--                  <li><a href="#">Deep Drop Down 3</a></li>-->
-<!--                  <li><a href="#">Deep Drop Down 4</a></li>-->
-<!--                  <li><a href="#">Deep Drop Down 5</a></li>-->
-<!--                </ul>-->
-<!--              </li>-->
-<!--              <li><a href="#">Drop Down 2</a></li>-->
-<!--              <li><a href="#">Drop Down 3</a></li>-->
-<!--              <li><a href="#">Drop Down 4</a></li>-->
-<!--            </ul>-->
-<!--          </li>-->
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+          <li><router-link class="nav-link scrollto active" to="/">Home</router-link></li>
+          <li><router-link class="nav-link scrollto" to="#service">Services</router-link></li>
+          <li><router-link class="nav-link scrollto" to="/about">About</router-link></li>
+          <li><router-link class="nav-link scrollto" to="/team">Team</router-link></li>
+          <li><router-link class="nav-link scrollto" to="/quote">Request A Quote</router-link></li>
+          <li><router-link class="nav-link scrollto" to="/contact">Contact</router-link></li>
+          <li><router-link class="getstarted scrollto" to="#about">Get Started</router-link></li>
         </ul>
-        <i v-if="menu" class="bi bi-list mobile-nav-toggle" @click="mobileViewToggle"></i>
-        <i v-if="cross" class="bi mobile-nav-toggle bi-x"></i>
-      </nav><!-- .navbar -->
-
+        <i v-if="!mobileMenu" class="bi bi-list mobile-nav-toggle" @click="mobileViewToggle"></i>
+        <i v-if="mobileMenu" class="bi mobile-nav-toggle bi-x" @click="mobileViewToggle"></i>
+      </nav>
+      <!-- .navbar -->
     </div>
-  </header><!-- End Header -->
+  </header>
+  <router-view/>
+  <FooterComponent/>
+  <!-- End Header -->
 </template>
 
 <style scoped>

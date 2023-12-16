@@ -4,8 +4,8 @@
 
 <template>
   <!-- ======= About Us Section ======= -->
-  <section id="about" class="about">
-    <div class="container" data-aos="fade-up">
+  <section id="about" class="about mt-8">
+    <div class="container" data-aos="fade-down">
       <div class="section-title">
         <h2>About Us</h2>
       </div>
@@ -27,7 +27,7 @@
             velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <a href="#team" class="btn-learn-more">Learn More</a>
+          <router-link to="/team" class="btn-learn-more">Learn More</router-link>
         </div>
       </div>
 
