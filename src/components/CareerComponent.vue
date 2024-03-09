@@ -252,8 +252,6 @@ const countryList = {
     "ZW": "Zimbabwe"
   }
 }
-
-
 </script>
 
 <template>

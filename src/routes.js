@@ -6,6 +6,7 @@ import RequestAQuoteForm from "@/components/RequestAQuoteForm.vue";
 import ContactComponent from "@/components/ContactComponent.vue";
 import CareerComponent from "@/components/CareerComponent.vue";
 import FleetComponent from "@/components/FleetComponent.vue";
+import BunkeringComponent from "@/components/BunkeringComponent.vue";
 
 
 const routes = [
@@ -13,6 +14,11 @@ const routes = [
         name: 'Home',
         path: '/',
         component: HomeComponent
+    },
+    {
+        name: 'Bunkering',
+        path: '/bunker',
+        component: BunkeringComponent
     },
     {
         name: "Team",

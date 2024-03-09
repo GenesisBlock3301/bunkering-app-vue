@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <!-- ======= About Us Section ======= -->
+  <!-- ======= Vision Section ======= -->
   <section id="about" class="about mt-8">
     <div class="container" data-aos="fade-down">
       <div class="section-title">
