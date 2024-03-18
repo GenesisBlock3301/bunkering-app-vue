@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp} from 'vue'
 import "./assets/vendor/aos/aos.css"
 import "./assets/vendor/bootstrap/css/bootstrap.min.css"
 import "./assets/vendor/bootstrap-icons/bootstrap-icons.css"
