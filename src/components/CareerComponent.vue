@@ -256,7 +256,7 @@ const countryList = {
 
 <template>
   <!-- ======= Quote Section ======= -->
-  <section id="contact" class="contact mt-8">
+  <section id="career" class="contact mt-8">
     <div class="container" data-aos="fade-down">
 
       <div class="section-title">

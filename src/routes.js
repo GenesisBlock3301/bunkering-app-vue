@@ -7,6 +7,7 @@ import ContactComponent from "@/components/ContactComponent.vue";
 import CareerComponent from "@/components/CareerComponent.vue";
 import FleetComponent from "@/components/FleetComponent.vue";
 import BunkeringComponent from "@/components/BunkeringComponent.vue";
+import TermsComponent from "@/components/TermsComponent.vue";
 
 
 const routes = [
@@ -44,6 +45,11 @@ const routes = [
         name: "Fleet",
         path: "/fleet",
         component: FleetComponent
+    },
+    {
+        name: "Terms",
+        path: "/terms",
+        component: TermsComponent
     },
 ]
 

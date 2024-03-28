@@ -81,7 +81,7 @@ let checkForm = function () {
 
 <template>
   <!-- ======= Quote Section ======= -->
-  <section id="contact" class="contact mt-8">
+  <section id="quote" class="contact mt-8">
     <div class="container" data-aos="fade-down">
       <div class="section-title">
         <h2>Request a quote</h2>
