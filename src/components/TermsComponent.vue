@@ -10,8 +10,8 @@
         <h2>Terms & Conditions</h2>
         <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
       </div>
-      <div class="row">
-<!--        <pdf pdf="term_&_condition.pdf" @open="openHandler"></pdf>-->
+      <div style="padding-left: 150px" class="text-center">
+        <embed id="pdf-viewer" src="term_&_condition.pdf" type="application/pdf" />
       </div>
     </div>
   </section>
@@ -21,5 +21,9 @@
 <style scoped>
 .pic {
   flex: 0 0 auto; /* Allow the div to grow but not shrink */
+}
+#pdf-viewer {
+  width: 80%;
+  height: 80vh;
 }
 </style>
