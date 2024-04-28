@@ -41,11 +41,11 @@ const routes = [
         path: "/career",
         component: CareerComponent
     },
-    {
-        name: "Fleet",
-        path: "/fleet",
-        component: FleetComponent
-    },
+    // {
+    //     name: "Fleet",
+    //     path: "/fleet",
+    //     component: FleetComponent
+    // },
     {
         name: "Terms",
         path: "/terms",

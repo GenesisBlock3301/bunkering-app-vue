@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <!-- ======= Team Section ======= -->
+  <!-- ======= Term Section ======= -->
   <section id="team" class="team section-bg mt-8">
     <div class="container" data-aos="fade-down">
       <div class="section-title">

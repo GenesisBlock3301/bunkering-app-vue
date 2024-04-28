@@ -37,7 +37,7 @@ function handleResize() {
           <li @click="closeMobileMenu"><router-link :class="{ 'nav-link': true, 'active': $route.path === '/' }" to="/">Home</router-link></li>
           <li @click="closeMobileMenu"><router-link :class="{ 'nav-link': true, 'active': $route.path === '/bunker' }" to="/bunker">Bunkering</router-link></li>
           <li @click="closeMobileMenu"><router-link :class="{ 'nav-link': true, 'active': $route.path === '/team' }" to="/team">Team</router-link></li>
-          <li @click="closeMobileMenu"><router-link :class="{ 'nav-link': true, 'active': $route.path === '/fleet' }" to="/fleet">Fleet</router-link></li>
+<!--          <li @click="closeMobileMenu"><router-link :class="{ 'nav-link': true, 'active': $route.path === '/fleet' }" to="/fleet">Fleet</router-link></li>-->
           <li @click="closeMobileMenu"><router-link :class="{ 'nav-link': true, 'active': $route.path === '/career' }" to="/career">Career</router-link></li>
           <li @click="closeMobileMenu"><router-link :class="{ 'nav-link': true, 'active': $route.path === '/quote' }" to="/quote">Request A Quote</router-link></li>
           <li @click="closeMobileMenu"><router-link :class="{ 'nav-link': true, 'active': $route.path === '/contact' }" to="/contact">Contact</router-link></li>
