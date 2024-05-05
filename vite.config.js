@@ -10,7 +10,10 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': '/src',
     }
-  }
+  },
+  build: {
+    assetsInlineLimit: 0, // Ensure assets are not inlined
+  },
 })
