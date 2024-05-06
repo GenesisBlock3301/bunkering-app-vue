@@ -5,8 +5,8 @@ const fleetImages = ref([
   {
     id: id++,
     name: "Hawks Javaahiru",
-    img1: "/src/assets/img/Javaahiru-1.webp",
-    img2: "/src/assets/img/Javaahiru-2.webp",
+    img1: "/assets/img/Javaahiru-1.webp",
+    img2: "/assets/img/Javaahiru-2.webp",
     features:[
       {
         name: "Year built",
@@ -21,8 +21,8 @@ const fleetImages = ref([
   {
     id: id++,
     name: "Hawks Javaahiru 2",
-    img1: "/src/assets/img/Javaahiru-1.webp",
-    img2: "/src/assets/img/Javaahiru-2.webp",
+    img1: "/assets/img/Javaahiru-1.webp",
+    img2: "/assets/img/Javaahiru-2.webp",
     features:[
       {
         name: "Year built",

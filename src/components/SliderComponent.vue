@@ -19,7 +19,7 @@
 <!--          </div>-->
 <!--        </div>-->
 <!--        <div class="col-lg-12 hero-img" style="width: 100%" data-aos="zoom-in" data-aos-delay="200">-->
-          <img style="width: 100%" src="/src/assets/img/bunkering-4.jpg" class="img-fluid animated sm:img-fluid" alt="">
+          <img style="width: 100%" src="/assets/img/bunkering-4.jpg" class="img-fluid animated sm:img-fluid" alt="">
 <!--        </div>-->
 <!--      </div>-->
 <!--    </div>-->
