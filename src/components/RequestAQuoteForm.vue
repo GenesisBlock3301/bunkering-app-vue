@@ -2,10 +2,6 @@
 import {ref} from "vue";
 import moment from 'moment';
 import emailjs from '@emailjs/browser';
-//
-// const serviceId = process.env.VUE_APP_SERVICE_ID
-// const templateId = process.env.VUE_APP_TEMPLATE_ID
-// const publicKey = process.env.VUE_APP_PUBLIC_KEY
 
 moment.locale('en-GB');
 let id = 0
@@ -266,16 +262,10 @@ let checkForm = function () {
                 <textarea v-model="form_fields.message" class="form-control" name="message" rows="1" required></textarea>
               </div>
             </div>
-<!--            <div class="my-3">-->
-<!--              <div class="loading">Loading</div>-->
-<!--              <div class="error-message"></div>-->
-<!--              <div class="sent-message">Your message has been sent. Thank you!</div>-->
-<!--            </div>-->
             <div class="text-center">
               <button @click="checkForm" class="btn">Submit</button>
             </div>
           </form>
-<!--          <button @click="checkForm" type="submit">Submit</button>-->
         </div>
       </div>
     </div>
