@@ -33,21 +33,23 @@ let check_inputs_2 = ref([
 
 
 let form_fields = ref({
-  company_name: "",
-  contact_person: "",
-  telephone: "",
-  email: "",
-  selectedValue1: "",
-  selectedValue2: "",
-  vessel_name: "",
-  port: "",
-  berth_location: "",
-  estimated_date_of_arrival: new Date().toISOString().slice(0, 10),
-  estimated_time_of_arrival: "",
-  estimated_date_of_departure: new Date().toISOString().slice(0, 10),
-  estimated_time_of_departure: "",
-  agent: "",
-  message: ""
+    companyName: "",
+    contactPerson: "",
+    telephone: "",
+    email: "",
+    selectedValue1: "",
+    selectedValue2: "",
+    vesselName: "",
+    port: "",
+    berthLocation: "",
+    estimatedDateOfArrival: new Date().toISOString().slice(0, 10),
+    estimatedTimeOfArrival: "",
+    estimatedDateOfDeparture: new Date().toISOString().slice(0, 10),
+    estimatedTimeOfDeparture: "",
+    agent: "",
+    message: "",
+    quantity: "",
+
 })
 
 let handleRadioChange= function(event){
@@ -58,18 +60,25 @@ let handleRadioChange= function(event){
   }
 };
 
+const loading = ref(false);
 let errors = ref({})
 
 let checkForm = function () {
+  // loading.value = true
+  let formVal = form_fields.value
   let templateParams = {
-    email_id: 'James@gmail.com',
-    message: 'Check this out!'
+    ...formVal
   };
-  emailjs.send(serviceId, templateId, templateParams,publicKey)
+  let publicKey = 'U1b7BG5Kn3oepd0Fs';
+  let templateId = 'template_7cex1sq';
+  let serviceId = 'service_wnoyjak';
+  emailjs.send(serviceId, templateId, templateParams, publicKey)
       .then(function(response) {
         console.log('SUCCESS!', response.status, response.text);
+        loading.value = false
       }, function(error) {
         console.log('FAILED...', error);
+        loading.value = false
       });
 }
 
@@ -85,7 +94,7 @@ let checkForm = function () {
       </div>
       <div class="container">
         <div class="row">
-          <form action="" role="form" class="php-email-form">
+          <form role="form" class="php-email-form">
             <p v-if="errors.length">
               <b>Please correct the following error(s):</b>
               <ul>
@@ -100,32 +109,28 @@ let checkForm = function () {
                        type="text"
                        name="company_name"
                        class="form-control"
-                       v-model="form_fields.companyName"
-                       required>
+                       v-model="form_fields.companyName">
               </div>
               <div class="form-group col-md-3">
                 <label for="name"><small>Contact Person</small></label>
                 <input type="text" style="height: 50%"
                        class="form-control"
                        name="contact"
-                       v-model="form_fields.contactPerson"
-                       required>
+                       v-model="form_fields.contactPerson">
               </div>
               <div class="form-group col-md-3">
                 <label for="name"><small>Telephone</small></label>
                 <input type="text" name="telephone"
                        style="height: 50%"
                        class="form-control"
-                       v-model="form_fields.telephone"
-                       required>
+                       v-model="form_fields.telephone">
               </div>
               <div class="form-group col-md-3">
                 <label for="name"><small>Email</small></label>
                 <input type="email" style="height: 50%"
                        class="form-control"
                        name="email"
-                       v-model="form_fields.email"
-                       required>
+                       v-model="form_fields.email">
               </div>
             </div>
             <h1 class="mb-2"><strong>Product</strong></h1>
@@ -168,7 +173,6 @@ let checkForm = function () {
                     class="form-control"
                     name="quantity"
                     v-model="form_fields.quantity"
-                    required
                 >
               </div>
             </div>
@@ -181,7 +185,6 @@ let checkForm = function () {
                     name="vessel_name" style="height: 50%"
                     class="form-control"
                     v-model="form_fields.vesselName"
-                    required
                 >
               </div>
               <div class="form-group col-md-3">
@@ -191,8 +194,7 @@ let checkForm = function () {
                     class="form-control"
                     style="height: 50%"
                     name="port"
-                    v-model="form_fields.port"
-                    required>
+                    v-model="form_fields.port">
               </div>
               <div class="form-group col-md-3">
                 <label for="name"><small>Berth/Location</small></label>
@@ -200,7 +202,6 @@ let checkForm = function () {
                     type="text" name="name"
                     class="form-control" style="height: 50%"
                     v-model="form_fields.berthLocation"
-                    required
                 >
               </div>
               <div class="form-group col-md-3">
@@ -210,8 +211,8 @@ let checkForm = function () {
                     class="form-control"
                     style="height: 50%"
                     name="eda"
-                    v-model="form_fields.estimated_date_of_arrival"
-                    required>
+                    v-model="form_fields.estimatedDateOfArrival"
+                    >
               </div>
             </div>
             <div class="row">
@@ -223,8 +224,7 @@ let checkForm = function () {
                     name="eta"
                     class="form-control"
                     id="estimation_time_of_arrival"
-                    v-model="form_fields.estimated_time_of_arrival"
-                    required
+                    v-model="form_fields.estimatedTimeOfArrival"
                 >
               </div>
               <div class="form-group col-md-3">
@@ -232,8 +232,7 @@ let checkForm = function () {
                 <input
                     type="date" class="form-control"
                     style="height: 50%" name="estimation_time_of_departure"
-                    v-model="form_fields.estimated_date_of_departure"
-                    required
+                    v-model="form_fields.estimatedDateOfDeparture"
                 >
               </div>
               <div class="form-group col-md-3">
@@ -243,29 +242,32 @@ let checkForm = function () {
                     name="name"
                     class="form-control"
                     style="height: 50%"
-                    v-model="form_fields.estimated_time_of_departure"
-                    value="00:00"
-                    required>
+                    v-model="form_fields.estimatedTimeOfDeparture"
+                    value="00:00">
               </div>
               <div class="form-group col-md-3">
                 <label for="name"><small>Agent</small></label>
                 <input type="text" class="form-control" style="height: 50%"
                        name="agent"
-                       id="email" required
+                       id="email"
                        v-model="form_fields.agent"
                 >
               </div>
             </div>
             <div class="row">
               <div class="form-group">
-                <label for="name">Message</label>
-                <textarea v-model="form_fields.message" class="form-control" name="message" rows="1" required></textarea>
+                <label for="name">Message*</label>
+                <textarea v-model="form_fields.message" class="form-control" name="message" rows="1"></textarea>
               </div>
             </div>
-            <div class="text-center">
-              <button @click="checkForm" class="btn">Submit</button>
-            </div>
+<!--            <div class="text-center">-->
+<!--              <button @click="checkForm" class="btn">Submit</button>-->
+<!--              <h1 v-if="loading">Loading</h1>-->
+<!--            </div>-->
           </form>
+          <div class="text-center">
+            <button @click="checkForm" class="btn">Submit</button>
+          </div>
         </div>
       </div>
     </div>
@@ -281,7 +283,6 @@ input[type="radio"] {
   -moz-appearance: none;
   width: 15px;
   height: 15px;
-  //border: 1px solid #333;
   border-radius: 50%;
   outline: none;
   cursor: pointer;
